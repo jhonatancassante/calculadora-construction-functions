@@ -1,72 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-
-:root {
-    --primary-color: rgb(17, 86, 102);
-    --primary-color-darker: rgb(9, 48, 56);
-    --secondary-color: rgb(240, 247, 253);
-    --buttons-color: rgb(216, 216, 216);
-    --buttons-color-dark: rgb(196, 196, 196);
-    --buttons-color-light: rgb(240, 240, 240);
-}
-
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    outline: 0;
+    font-family: consolas;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--primary-color);
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.3em;
-    line-height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f8f8f8;
 }
 
 .container {
-    display:  flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 640px;
-    margin: 50px auto;
-    background-color: var(--secondary-color);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.container p {
-    text-align: justify;
+    position: relative;
+    min-width: 300px;
+    min-height: 400px;
+    padding: 30px 24px 24px;
+    border-radius: 20px;
+    background: #fafafa;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.15),
+        10px 10px 70px rgba(0, 0, 0, 0.15),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.15),
+        inset 5px 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .calculadora {
-   width: 400px;
-}
-
-.display, .btn {
-    padding: 10px;
+    position: relative;
+    display: grid;
+    width: 100%;
 }
 
 .display {
-    border: 2px solid var(--buttons-color);
-    width: 100%;
-    background-color: transparent;
-    font-size: 24px;
+    position: relative;
+    grid-column: span 4;
+    height: 60px;
+    left: 10px;
+    width: 270px;
+    border: none;
+    outline: none;
+    background: #a7af7c;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.75);
     text-align: right;
+    padding: 10px;
+    font-size: 2em;
 }
 
 .btn {
-    text-align: center;
-    border: none;
-    background-color: var(--buttons-color);
-    font-size: 20px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    margin: 6px;
+    background: linear-gradient(180deg, #fafafa, #f4f4f4);
+    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+        inset 0 -8px 8px rgba(0, 0, 0, 0.15),
+        0 0 0 2px rgba(0, 0, 0, 1),
+        10px 20px 25px rgba(0, 0, 0, 0.25);
+    color: #333;
+    user-select: none;
     cursor: pointer;
+    font-weight: 400;
+    border-radius: 8px;
 }
 
-.btn:hover {
-    background-color: var(--buttons-color-dark);
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    bottom: 12px;
+    right: 10px;
+    background: linear-gradient(90deg, #e6e6e6, #efefef);
+    border-radius: 10px;
+    box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25),
+        10px 5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff9;
+}
+
+.btn i {
+    position: relative;
+    font-style: normal;
+    font-size: 1.5em;
+    text-transform: uppercase;
 }
 
 .btn:active {
-    background-color: var(--buttons-color-light)
+    filter: brightness(0.9);
+}
+
+.btn-clear {
+    color: #fff;
+    background: #f00;
+}
+
+.btn-clear::before {
+    background: linear-gradient(90deg, #d20000, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+}
+
+.btn-eq {
+    color: #fff;
+    background: #2196f3;
+}
+
+.btn-eq::before {
+    background: linear-gradient(90deg, #1479c9, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
 }

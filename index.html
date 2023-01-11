@@ -5,52 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Com Construction Function</title>
+    <title>Calculadora Com Factory Functions</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <section class="container">
-        <h1>Calculadora</h1>
-        
-        <table class="calculadora">
-            <tr>
-                <td colspan="4">
-                    <input type="text" class="display">
-                </td>
-            </tr>
-            <tr>
-                <td class="btn btn-clear">C</td>
-                <td class="btn btn-open-bracket">(</td>
-                <td class="btn btn-close-bracket">)</td>
-                <td class="btn btn-operator">/</td>
-            </tr>
-            <tr>
-                <td class="btn btn-num">7</td>
-                <td class="btn btn-num">8</td>
-                <td class="btn btn-num">9</td>
-                <td class="btn btn-operator">*</td>
-            </tr>
-            <tr>
-                <td class="btn btn-num">4</td>
-                <td class="btn btn-num">5</td>
-                <td class="btn btn-num">6</td>
-                <td class="btn btn-operator">+</td>
-            </tr>
-            <tr>
-                <td class="btn btn-num">1</td>
-                <td class="btn btn-num">2</td>
-                <td class="btn btn-num">3</td>
-                <td class="btn btn-operator">-</td>
-            </tr>
-            <tr>
-                <td class="btn btn-dot">.</td>
-                <td class="btn btn-num">0</td>
-                <td class="btn btn-del">«</td>
-                <td class="btn btn-eq">=</td>
-            </tr>
-        </table>
-        
+        <form class="calculadora">
+            <input type="text" class="display">
+            <span class="btn btn-clear"><i>C</i></span>
+            <span class="btn btn-open"><i>(</i></span>
+            <span class="btn btn-close"><i>)</i></span>
+            <span class="btn btn-operator"><i>/</i></span>
+            <span class="btn btn-num"><i>7</i></span>
+            <span class="btn btn-num"><i>8</i></span>
+            <span class="btn btn-num"><i>9</i></span>
+            <span class="btn btn-operator"><i>*</i></span>
+            <span class="btn btn-num"><i>4</i></span>
+            <span class="btn btn-num"><i>5</i></span>
+            <span class="btn btn-num"><i>6</i></span>
+            <span class="btn btn-operator"><i>+</i></span>
+            <span class="btn btn-num"><i>1</i></span>
+            <span class="btn btn-num"><i>2</i></span>
+            <span class="btn btn-num"><i>3</i></span>
+            <span class="btn btn-operator"><i>-</i></span>
+            <span class="btn btn-dot"><i>.</i></span>
+            <span class="btn btn-num"><i>0</i></span>
+            <span class="btn btn-del"><i>«</i></span>
+            <span class="btn btn-eq"><i>=</i></span>
+
+        </form>
+
     </section>
     <script src="./assets/js/main.js"></script>
 </body>
