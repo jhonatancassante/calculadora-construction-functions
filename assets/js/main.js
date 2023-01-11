@@ -8,6 +8,7 @@
         this.equal = false;
 
         this.start = () => {
+            this.display.focus();
             buttonClick();
             keyboardEntry();
         };
@@ -96,6 +97,8 @@
 
             if (testCalculation(value))
                 this.display.value += value;
+
+            this.display.focus();
         };
 
         const clearDisplay = () => {
