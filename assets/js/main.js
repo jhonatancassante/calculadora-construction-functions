@@ -69,17 +69,17 @@
                     return;
                 }
 
-                if (e.key === '(') {
+                if (event.key === '(') {
                     openBracket(event.key);
                     return;
                 }
 
-                if (e.key === ')' && this.bracket) {
+                if (event.key === ')' && this.bracket) {
                     closeBracket(event.key);
                     return;
                 }
 
-                if (e.key === '.') {
+                if (event.key === '.') {
                     dotDisplay(event.key);
                     return;
                 }
@@ -127,6 +127,9 @@
                 && !lastDigitIsCloseBracket())
                 this.display.value = this.display.value.slice(0, -1);
 
+            if (displayIsEmpty())
+                return;
+
             toDisplay(value);
             this.dot = false;
         };
@@ -135,7 +138,7 @@
             if (!lastDigitIsNumber() && this.dot)
                 return;
 
-            if (lastDigitIsNumber() && !this.equal)
+            if (lastDigitIsNumber() && !displayIsEmpty() && !this.equal)
                 toDisplay('*')
 
             toDisplay(value);
@@ -155,7 +158,8 @@
                 return;
 
             if (!lastDigitIsNumber()
-                || lastDigitIsOpenBracket())
+                || lastDigitIsOpenBracket()
+                || displayIsEmpty())
                 toDisplay('0')
 
             toDisplay(value);
@@ -179,9 +183,6 @@
         };
 
         const lastDigitIsNumber = () => {
-            if (this.display.value === '')
-                return false;
-
             const lastDigit = Number(this.display.value.slice(-1));
             return Number.isInteger(lastDigit);
         };
@@ -194,6 +195,11 @@
         const lastDigitIsCloseBracket = () => {
             const lastDigit = this.display.value.slice(-1);
             return lastDigit === ')';
+        };
+
+        const displayIsEmpty = () => {
+            if (this.display.value.length === 0)
+                return true;
         };
 
     }
